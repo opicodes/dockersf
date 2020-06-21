@@ -7,7 +7,7 @@ services:
           - '80:80'
         volumes:
           - ./config/vhosts:/etc/apache2/sites-enabled
-          - .:/app
+          - ..:/app
         depends_on:
           - php
 
@@ -29,7 +29,7 @@ services:
         build: ./php
         container_name: ${PROJECT_NAME}-php
         volumes:
-          - .:/app
+          - ..:/app
           - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini
         # depends_on:
         #   - mysql
